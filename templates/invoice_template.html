@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="../static/css/invoice_style.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <img src="../static/images/logo.png" alt="Company Logo" class="logo">
+        <h1 class="invoice-title">Tax Invoice/Bill of Supply/Cash Memo (Original for Recipient)</h1>
+    </header>
+        <div class="info-section">
+            <div class="sold-by">
+                <strong>Sold By:</strong><br>
+                <p>{{seller_name}}</p>
+                <p>{{seller_address}}</p>
+                <p>{{seller_city}}</p>
+                <p>PAN No.: {{seller_pan}}</p>
+                <p>GST Registration No.: {{seller_gst}}</p>
+            </div>
+            <div class="billing-shipping">
+                <div>
+                    <strong>Billing Address:</strong><br>
+                    <p>{{billing_name}}</p>
+                    <p>{{billing_address}}</p>
+                    <p>{{billing_city}}</p>
+                    <p>State/UT Code: {{billing_state_code}}</p>
+                </div>
+                <div>
+                    <strong>Shipping Address:</strong><br>
+                    <p>{{shipping_name}}</p>
+                    <p>{{shipping_address}}</p>
+                    <p>{{shipping_city}}</p>
+                    <p>State/UT Code: {{shipping_state_code}}</p>
+                </div>
+            </div>
+            <div class="order-invoice-details">
+                <div>
+                    <strong>Order Details:</strong><br>
+                    <p>Order No.: {{order_no}}</p>
+                    <p>Order Date: {{order_date}}</p>
+                </div>
+                <div>
+                    <strong>Invoice Details:</strong><br>
+                    <p>Invoice No.: {{invoice_no}}</p>
+                    <p>Invoice Date: {{invoice_date}}</p>
+                </div>
+                <div>
+                    <strong>Additional Details:</strong><br>
+                    <p>Place of Supply: {{place_of_supply}}</p>
+                    <p>Place of Delivery: {{place_of_delivery}}</p>
+                    <p>Reverse Charge: {{reverse_charge}}</p>
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr class="table-title">
+                    <th>Sl. No</th>
+                    <th>Description</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Discount</th>
+                    <th>Net Amount</th>
+                    <th>Tax Rate</th>
+                    <th>Tax Amount</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{items_body}}
+            </tbody>
+        </table>
+        <div class="total-row">
+            <strong>Total:</strong> {{total}}
+        </div>
+        <div class="amount-in-words">
+            <strong>Amount in Words:</strong> {{amount_in_words}}
+        </div>
+        <div class="signature">
+            <p>For {{seller_name}}:</p>
+            <img src="../static/images/signature.png" alt="Signature" class="signature-img">
+            <p>Authorized Signatory</p>
+        </div>
+    </div>
+    <footer>
+        <p>Thank you for your business!</p>
+    </footer>
+</body>
+</html>
